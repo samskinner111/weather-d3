@@ -6,9 +6,6 @@ class CreateWeatherReadings < ActiveRecord::Migration[5.0]
       t.string :reading_type
       t.integer :reading_value
       t.string :measurement_flag
-      t.string :quality_flag
-      t.string :source_flag
-      t.integer :observation_time
 
       t.timestamps
     end

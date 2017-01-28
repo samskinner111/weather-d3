@@ -21,26 +21,19 @@ ActiveRecord::Schema.define(version: 20170126164619) do
     t.string   "reading_type"
     t.integer  "reading_value"
     t.string   "measurement_flag"
-    t.string   "quality_flag"
-    t.string   "source_flag"
-    t.integer  "observation_time"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
   create_table "weather_stations", force: :cascade do |t|
-    t.string   "station_id"
+    t.string   "station_code"
     t.float    "latitude"
     t.float    "longitude"
     t.float    "elevation"
-    t.string   "state"
     t.string   "name"
-    t.string   "gsn_flag"
-    t.string   "hcn_flag"
-    t.string   "wmo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["station_id"], name: "index_weather_stations_on_station_id", using: :btree
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["station_code"], name: "index_weather_stations_on_station_code", using: :btree
   end
 
 end
